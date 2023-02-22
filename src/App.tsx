@@ -9,15 +9,19 @@ export default function App() {
     <View style={style.container}>
       <Text style={style.mainTitle}>PATIKASTORE</Text>
       <TextInput style={style.textInput} placeholder="Ara.." />
-      {datas.map(item => (
-        <Card
-          key={item.id}
-          image={item.imgURL}
-          cardTitle={item.title}
-          price={item.price}
-          inStock={item.inStock}
-        />
-      ))}
+      <FlatList
+        data={datas}
+        renderItem={({item}) => (
+          <Card
+            image={item.imgURL}
+            cardTitle={item.title}
+            price={item.price}
+            inStock={!item.inStock ? 'stokta yok' : ''}
+          />
+        )}
+        keyExtractor={item => item.id.toString()}
+        numColumns={2}
+      />
     </View>
   );
 }
