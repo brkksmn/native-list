@@ -7,7 +7,7 @@ export default function App() {
   const datas = data;
   return (
     <View style={style.container}>
-      <Text style={style.mainTitle}>PATIKASTORE</Text>
+      <Text style={style.mainTitle}>STORE</Text>
       <TextInput style={style.textInput} placeholder="Ara.." />
       <FlatList
         data={datas}
